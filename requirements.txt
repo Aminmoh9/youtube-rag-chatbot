@@ -1,0 +1,38 @@
+# YouTube & Video Processing
+yt-dlp
+google-api-python-client
+
+# Audio Transcription
+openai-whisper
+ffmpeg-python
+
+# Text Processing & Embeddings
+langchain
+langchain-community
+sentence-transformers
+
+# Vector Database
+pinecone-client
+
+# LLM
+openai
+langchain-openai
+langsmith
+# or
+transformers
+torch
+
+# Speech Recognition & Text-to-Speech
+SpeechRecognition
+PyAudio
+gTTS
+pydub
+
+# Web Interface
+streamlit
+streamlit-mic-recorder
+
+# Utilities
+pandas
+python-dotenv
+tqdm
