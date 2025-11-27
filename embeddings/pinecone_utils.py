@@ -5,7 +5,6 @@ Updates CSV with embedding status after upload.
 import os
 import json
 import pandas as pd
-from pathlib import Path
 from dotenv import load_dotenv
 from pinecone import Pinecone, ServerlessSpec
 from tqdm import tqdm
@@ -83,6 +82,56 @@ def upsert_chunks_to_pinecone(embeddings_path='data/embeddings.json',
     print(f"✓ CSV updated: {csv_path}")
     
     return len(vectors)
+
+
+def query_pinecone(query_text: str, top_k: int = 5, topic: str = None):
+    """
+    Query Pinecone for similar chunks.
+    
+    Args:
+        query_text (str): User's question
+        top_k (int): Number of results to return
+        topic (str): Optional topic filter (SQL, Python, Excel, etc.)
+    
+    Returns:
+        list: Retrieved chunks with scores and metadata
+    """
+    from openai import OpenAI
+    
+    # Initialize OpenAI client
+    openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    
+    # Generate embedding for query
+    response = openai_client.embeddings.create(
+        input=query_text,
+        model="text-embedding-ada-002"
+    )
+    query_embedding = response.data[0].embedding
+    
+    # Initialize Pinecone
+    index = initialize_pinecone()
+    
+    # Build filter if topic provided
+    filter_dict = {"topic": topic} if topic else None
+    
+    # Query Pinecone
+    results = index.query(
+        vector=query_embedding,
+        top_k=top_k,
+        include_metadata=True,
+        filter=filter_dict
+    )
+    
+    # Format results
+    formatted_results = []
+    for match in results.matches:
+        formatted_results.append({
+            "id": match.id,
+            "score": match.score,
+            "metadata": match.metadata
+        })
+    
+    return formatted_results
 
 
 if __name__ == "__main__":
