@@ -36,18 +36,28 @@ class MultimodalQAAgent:
     QA system for multimodal chatbot.
     Handles video transcript search and answer generation.
     """
-    
-    def __init__(self, temperature: float = 0.3, similarity_threshold: float = 0.75):
+
+    def __init__(self, temperature: float = 0.3, top_p: float = 1.0, max_tokens: int = 256, similarity_threshold: float = 0.7):
         """
         Initialize the QA agent.
-        
+
         Args:
             temperature (float): GPT temperature (0-1, lower = more focused)
+            top_p (float): Nucleus sampling parameter
+            max_tokens (int): Maximum tokens for response
             similarity_threshold (float): Minimum similarity score for retrieval
         """
         self.temperature = temperature
+        self.top_p = top_p
+        self.max_tokens = max_tokens
         self.similarity_threshold = similarity_threshold
         self.chat_history = []
+        self.llm = ChatOpenAI(
+            model="gpt-3.5-turbo",
+            temperature=self.temperature,
+            top_p=self.top_p,
+            max_tokens=self.max_tokens
+        )
     
     def _search_videos(self, query: str, topic: str = None) -> List[Dict]:
         """
@@ -162,19 +172,19 @@ Instructions:
 Answer:"""
             
             # Generate answer with GPT
-            response = llm.invoke([
+            response = self.llm.invoke([
                 {"role": "system", "content": "You are a data analytics tutor assistant. You must ONLY answer based on the provided context. Never use your general knowledge. If the context doesn't contain the answer, say you don't know."},
                 {"role": "user", "content": prompt}
             ])
-            
+
             answer = response.content
-            
+
             # Store in chat history
             self.chat_history.append({
                 "question": question,
                 "answer": answer
             })
-            
+
             return {
                 "question": question,
                 "answer": answer,

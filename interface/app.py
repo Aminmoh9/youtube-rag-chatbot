@@ -19,38 +19,12 @@ st.set_page_config(
     layout="wide"
 )
 
-# CSS for two-column layout
-st.markdown("""
-<style>
-    .main-title {
-        font-size: 2.5rem;
-        font-weight: 600;
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-    .answer-box {
-        background-color: white;
-        padding: 1.5rem;
-        border-radius: 8px;
-        border: 1px solid #e0e0e0;
-        margin: 1rem 0;
-    }
-    .source-info {
-        font-size: 0.9rem;
-        color: #6c757d;
-        margin-top: 1rem;
-    }
-    /* Style the Ask Question button */
-    .stFormSubmitButton > button {
-        background-color: #0066cc;
-        color: white;
-    }
-    .stFormSubmitButton > button:hover {
-        background-color: #0052a3;
-        color: white;
-    }
-</style>
-""", unsafe_allow_html=True)
+#Load CSS file
+def load_css(path):
+    with open(path) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+# Call the CSS
+load_css("styles/styles.css")
 
 # Initialize session state
 if 'chat_history' not in st.session_state:
