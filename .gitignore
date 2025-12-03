@@ -1,24 +1,33 @@
-# Downloaded videos and audio (DO NOT COMMIT)
-data/videos/
-*.mp4
-*.mp3
-*.wav
-*.m4a
-*.webm
-
-# API keys and secrets
-.env
-*.key
-
 # Python
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environment
+.env
+.venv
 env/
 venv/
-*.egg-info/
+ENV/
+env.bak/
+venv.bak/
 
 # IDE
 .vscode/
@@ -26,12 +35,34 @@ venv/
 *.swp
 *.swo
 
+# Data - Keep folder structure, ignore contents
+data/*
+!data/.gitkeep
+!data/*/
+data/*/*.mp3
+data/*/*.wav
+data/*/*.mp4
+data/*/*.webm
+data/*/*.m4a
+data/*/*.json
+data/*/*.csv
+data/*/*.txt
+data/*/*.pkl
+
+# Logs
+*.log
+logs/
+
+# Test results
+test_results/*.xml
+test_results/*.html
+test_results/*.log
+test_results/coverage/
+!test_results/.gitkeep
+
 # OS
 .DS_Store
 Thumbs.db
 
-# Logs
-*.log
-
-# Jupyter
-.ipynb_checkpoints/
+# Streamlit
+.streamlit/
