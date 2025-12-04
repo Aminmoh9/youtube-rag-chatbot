@@ -17,7 +17,7 @@ input_methods:
     
   audio_video_upload:
     enabled: true
-    max_size_mb: 100
+    max_size_mb: 200
     allowed_formats: ["mp3", "wav", "m4a", "mp4", "avi", "mov", "mkv"]
     
   script_upload:
