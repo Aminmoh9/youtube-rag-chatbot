@@ -1,0 +1,20 @@
+{
+  "session_id": "session-20251201220841-2cab400d",
+  "input_method": "youtube_link",
+  "url": "https://www.youtube.com/watch?v=OBqYU0opS3g",
+  "video_id": "OBqYU0opS3g",
+  "topic": "Digital Marketing Trends",
+  "summary": "- Main Topic: Key Trends Shaping Digital Marketing in 2025\n\n- Key Points:\n  - Brand recognition is crucial in 2025, with the average person needing 11.1 touch points before making a purchase.\n  - Google Trends can help track brand recognition through search queries.\n  - Platforms beyond Google, like Instagram, Amazon, and Apple App Store, are becoming significant for searches and must be optimized for.\n  - AI agents are a key opportunity for automation and scaling in digital marketing.\n  - International markets offer higher ROI potential due to lower competition, emphasizing the importance of multilingual marketing.\n  - Podcasting is a growing channel with an affluent and loyal audience, making it ideal for long-term brand building.\n  - Social commerce is on the rise, with platforms like TikTok, Instagram, and YouTube driving significant sales through live streams and influencer content.\n\n- Main Takeaways:\n  - Marketers need to focus on brand recognition, adapt to multiple search platforms, leverage AI agents, target international markets, explore podcasting, and embrace social commerce to succeed in the evolving digital marketing landscape of 2025.",
+  "chunk_count": 6,
+  "pinecone_result": {
+    "vectors_upserted": 6,
+    "index": "youtube-research-isolated",
+    "namespace": "topic-fc7afcfd0601ec56",
+    "topic": "Digital Marketing Trends",
+    "isolation_method": "namespace"
+  },
+  "content_type": "youtube_video",
+  "status": "processed",
+  "transcript_preview": "If you don't know this, you'll be left behind. In 2025, digital marketing isn't just changing, it's becoming completely rewritten. These are the six biggest trends reshaping how people buy, click, and engage, and trust brands online. If you're not adapting to these changes, your traffic, your conversions, and ROI will disappear fast. So, let's get into it. Most marketers obsess over clicks and traffic, but in 2025, this is what you should care about. I want you to go to Google Trends and type in",
+  "created_at": "2025-12-01T22:08:57.782139"
+}

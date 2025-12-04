@@ -1,0 +1,19 @@
+{
+  "session_id": "session-20251203023146-bf86d2ee",
+  "input_method": "script_upload",
+  "filename": "Power Query in Power BI.txt",
+  "topic": "Power Query in Power BI",
+  "summary": "- Main Topic:\n    Power Query in Power BI Tutorial\n\n- Key Points:\n    - Power Query allows users to transform data before importing it into Power BI.\n    - The tutorial demonstrates how to import data from Excel into Power BI using Power Query.\n    - The Power Query Editor in Power BI provides various functionalities like removing columns, keeping rows, splitting columns, etc.\n    - Applied steps in Power Query are documented and can be used to track changes made to the data.\n    - The tutorial shows how to clean up data by removing unnecessary rows, changing data types, and filtering out specific values.\n    - Transposing or pivoting columns can make the data more usable for visualizations in Power BI.\n    - Renaming columns and adjusting data types are important steps in preparing data for visualization.\n    - Users need to be aware of the data types and formats in the original data source to avoid errors during transformation.\n    - Finally, the data is loaded into Power BI for creating visualizations.\n\n- Main Takeaways:\n    - Power Query in Power BI is a powerful tool for data transformation and preparation.\n    - Cleaning and organizing data is essential for creating effective visualizations.\n    - Understanding the original data source and its structure is crucial for successful data transformation in Power Query.\n    - Utilizing the functionalities in Power Query can streamline the data preparation process for visualization in Power BI.",
+  "chunk_count": 18,
+  "pinecone_result": {
+    "vectors_upserted": 18,
+    "index": "youtube-research-isolated",
+    "namespace": "topic-d316d62f214dae2c",
+    "topic": "Power Query in Power BI",
+    "isolation_method": "namespace"
+  },
+  "content_type": "text",
+  "status": "processed",
+  "transcript_preview": " What's going on everybody? Today we're continuing our Power BI tutorial series. And in this video, we're gonna be looking at Power Query. Now Power Query is really great because it allows you to actually transform the data before you actually get it into Power BI. So if you wanna make any changes like adding or deleting a column or changing the data type or a ton of other things, you can do all of that in Power Query. Now without further ado, let's jump on my screen and get started with the tut",
+  "created_at": "2025-12-03T02:31:56.301440"
+}
