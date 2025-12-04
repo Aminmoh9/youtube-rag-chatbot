@@ -18,8 +18,8 @@ except:
 def listen_to_question(timeout=5, phrase_time_limit=20, use_whisper_fallback=True):
     """
     Listen to microphone input and return transcribed text.
-    Uses SpeechRecognition library with Google Speech Recognition.
-    Falls back to Whisper API if Google fails.
+    Uses SpeechRecognition library and prefers a local Whisper transcription agent.
+    Falls back to the OpenAI Whisper API if local Whisper is not available.
     
     Args:
         timeout: Time to wait for speech to start (seconds)

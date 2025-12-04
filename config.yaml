@@ -17,7 +17,7 @@ input_methods:
     
   audio_video_upload:
     enabled: true
-    max_size_mb: 200
+    max_size_mb: 100
     allowed_formats: ["mp3", "wav", "m4a", "mp4", "avi", "mov", "mkv"]
     
   script_upload:
@@ -64,7 +64,7 @@ input_methods:
     
   file_upload:
     enable_voice_input: false   # Files don't need voice input
-    max_size_mb: 100
+    max_size_mb: 200
 
 # Storage
 storage:
