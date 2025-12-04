@@ -1,0 +1,97 @@
+# Application settings
+app:
+  name: "YouTube AI Research Assistant"
+  version: "1.0.0"
+  debug: false
+
+# Input Methods
+input_methods:
+  topic_search:
+    enabled: true
+    max_videos: 10
+    default_count: 5
+    
+  youtube_link:
+    enabled: true
+    require_consent: true
+    
+  audio_video_upload:
+    enabled: true
+    max_size_mb: 100
+    allowed_formats: ["mp3", "wav", "m4a", "mp4", "avi", "mov", "mkv"]
+    
+  script_upload:
+    enabled: true
+    allowed_formats: ["txt", "md", "pdf", "docx", "json"]
+
+# Processing
+processing:
+  prefer_subtitles: true
+  require_consent: true
+  whisper_model: "small"
+  chunk_size: 4500  # ~5 minutes of speech (750-900 words)
+  chunk_overlap: 900  # ~1 minute overlap (150-180 words)
+  embedding_model: "text-embedding-ada-002"
+  llm_model: "gpt-3.5-turbo"
+
+# Voice Features
+voice:
+  enabled: true
+  default_voice: "nova"
+  auto_play: false
+  cache_audio: true
+  cache_duration_hours: 24
+  
+  voices:
+    topic_search: "shimmer"
+    youtube_link: "echo"
+    audio_video_upload: "alloy"
+    script_upload: "fable"
+  
+  tts_model: "tts-1"
+  audio_format: "mp3"
+  bitrate: "128k"
+
+# Input Methods with Voice
+input_methods:
+  topic_search:
+    enable_voice_input: true
+    max_voice_duration: 30     # seconds
+    
+  youtube_link:
+    enable_voice_input: true
+    require_consent: true
+    
+  file_upload:
+    enable_voice_input: false   # Files don't need voice input
+    max_size_mb: 100
+
+# Storage
+storage:
+  use_separate_indices: false  # Uses namespaces within single index (free tier compatible)
+  session_expiry_hours: 24
+  cache_enabled: true
+  cleanup_interval_hours: 1
+
+# UI
+ui:
+  default_tab: "topic_search"
+  enable_voice_input: true
+  enable_dark_mode: true
+  show_cost_estimates: true
+
+#Langsmith
+langsmith:
+  enabled: true
+  api_key: ${LANGSMITH_API_KEY}
+  project: "youtube-ai-research"
+  tracing:
+    qa_model: true
+    embeddings: true
+    youtube_pipeline: true
+  feedback:
+    enabled: true
+    collect_ratings: true
+  evaluation:
+    dataset_tracking: true
+    auto_evaluate: false
