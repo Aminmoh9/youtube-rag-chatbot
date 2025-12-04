@@ -48,6 +48,7 @@ data/*/*.json
 data/*/*.csv
 data/*/*.txt
 data/*/*.pkl
+data/*/*.jsonl
 
 # Logs
 *.log
